@@ -1,0 +1,666 @@
+:root {
+    --discord-primary: #5865f2;
+    --discord-dark: #27282c;
+    --discord-card: #282b2e;
+    --discord-text: #dbdee1;
+    --discord-border: #1e1f22;
+    --discord-gradient: linear-gradient(0deg, #5e6bed 0%, #5d44c5 125%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to top, rgba(2, 2, 2, 0.91) 0%, rgba(31, 32, 38, 0.03) 50%, transparent 100%),
+    var(--discord-gradient);
+    background-attachment: fixed;
+    color: var(--discord-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    letter-spacing: 0.02em;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--discord-primary) rgba(30, 31, 34, 0.4);
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+
+html {
+    scrollbar-gutter: stable; /* Фиксирует место под скролл */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+.container {
+    max-width: 2480px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav {
+    background: #1e1f22;
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--discord-border);
+    backdrop-filter: blur(10px);
+    
+}
+
+.nav-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    overflow: visible;
+}
+
+.nav-link {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+    color: var(--discord-text);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s;
+    position: relative;
+    font-weight: 500;
+    white-space: nowrap;
+    font-size: 0.95rem;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(88, 101, 242, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-link:hover::before {
+    left: 100%;
+    
+}
+
+.nav-link:hover {
+    background: rgba(88, 101, 242, 0.15);
+    color: var(--discord-primary);
+    transform: translateY(-4px);
+}
+
+.nav-link.active {
+    color: var(--discord-primary);
+    transform: translateY(-4px);
+    z-index: 2;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--discord-primary);
+}
+
+.nav-indicator {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 2px;
+    background: var(--discord-primary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+    z-index: 1;
+}
+
+/* Анимация появления индикатора */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.nav-link.active {
+  animation: slideIn 0.3s ease-out;
+}
+
+.invait-button {
+    background: var(--discord-primary);
+    color: white !important;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin-left: auto;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.invait-button:hover {
+    background: #4752c4;
+    transform: translateY(-4px);
+    box-shadow: 0px 0px 22px 5px rgba(71,82,196,0.4);
+    -webkit-box-shadow: 0px 0px 22px 5px rgba(71,82,196,0.4);
+    -moz-box-shadow: 0px 0px 22px 5px rgba(71,82,196,0.4);
+}
+
+.section {
+    padding: 1px 0;
+    min-height: calc(3vh - 5px);
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+
+.section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.discord-card {
+    background: rgba(30, 31, 34, 0.95);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 24px 0;
+    border: 1px solid var(--discord-border);
+    box-shadow: 0 8px 32px rgb(109, 106, 220);
+    backdrop-filter: blur(8px);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: white;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px solid rgba(88, 101, 242, 0.3);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    color: white;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 32px 0;
+}
+
+.feature {
+    background: linear-gradient(145deg, rgba(47, 48, 55, 0.9), rgba(30,31,34,0.9));
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--discord-border);
+    transition: all 0.3s;
+    backdrop-filter: blur(4px);
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgb(109, 106, 220);
+}
+
+.feature ul {
+    padding-left: 1.2rem;
+    margin: 1rem 0 0;
+    list-style-type: none;
+}
+
+.feature li {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #b9bbbe;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.feature li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--discord-primary);
+    font-size: 1.4em;
+    line-height: 1;
+    top: 1px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: var(--discord-dark);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.data-table th,
+.data-table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--discord-border);
+    vertical-align: top;
+    font-size: 0.95em;
+}
+
+.data-table th {
+    background: rgba(88, 101, 242, 0.1);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.data-table tr:hover {
+    background: rgba(255,255,255,0.03);
+}
+
+footer {
+    background: rgba(30, 31, 34, 0.95);
+    padding: 32px 0;
+    margin-top: 64px;
+    border-top: 1px solid var(--discord-border);
+    text-align: center;
+    backdrop-filter: blur(8px);
+}
+
+footer {
+    flex-shrink: 0;
+    margin-top: auto; /* Важная строка */
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 25px 0;
+}
+
+.three-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 30px 0;
+}
+
+.column {
+    background: rgba(255,255,255,0.03);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--discord-border);
+    backdrop-filter: blur(4px);
+    margin-bottom: 1.5rem;
+}
+
+.column h2,
+.column h3 {
+    color: var(--discord-primary);
+    margin: 0 0 1.5rem;
+    font-size: 1.4rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid rgba(88, 101, 242, 0.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background-color: #1e1f22;
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid #5865f2;
+    box-shadow: 0 8px 24px rgb(109, 106, 220);
+    width: 80%;
+    max-width: 800px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: #5865f2;
+    cursor: pointer;
+}
+
+.policy-text {
+    color: #dbdee1;
+    line-height: 1.7;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.policy-text h3 {
+    color: #5865f2;
+    margin: 25px 0 15px;
+}
+
+.full-policy-link {
+    text-align: center;
+    margin: 30px 0;
+    padding: 15px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 9999; /* Добавляем высокий z-index */
+}
+
+.modal-content {
+    position: relative;
+    background-color: #1e1f22;
+    margin: 5% auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 12px;
+    animation: modalOpen 0.3s ease-out;
+}
+
+.modal.closing {
+    animation: modalClose 0.3s ease-in;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: rgba(30, 31, 34, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--discord-primary);
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: all 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4752c4;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(30, 31, 34, 0.4);
+    border-radius: 8px;
+    margin: 4px 0;
+}
+
+/* Для Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--discord-primary) rgba(30, 31, 34, 0.4);
+}
+
+/* Плавная прокрутка */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Специальный стиль для модального окна */
+.modal-content .policy-text::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content .policy-text::-webkit-scrollbar-thumb {
+    background: rgba(88, 101, 242, 0.6);
+    border-radius: 4px;
+}
+
+.modal-content .policy-text::-webkit-scrollbar-track {
+    background: rgba(30, 31, 34, 0.2);
+}
+
+
+/* Специальные стили для секций */
+.scroll-section {
+    scrollbar-width: thin;
+    scrollbar-color: var(--discord-primary) transparent;
+    overflow-y: auto;
+    max-height: 70vh;
+    padding-right: 12px;
+}
+
+.scroll-section {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 40px; /* Отступ от футера */
+}
+
+.scroll-section::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Эффект при скролле */
+.feature:hover {
+    scroll-snap-align: start;
+}
+
+/* Градиент для скролла в модалке */
+.modal-content .policy-text {
+    background:
+            linear-gradient(#1e1f22 30%, rgba(0,0,0,0)),
+            linear-gradient(rgba(0,0,0,0), #1e1f22 70%) 0 100%,
+            radial-gradient(farthest-side at 50% 0, rgba(88,101,242,0.3), transparent),
+            radial-gradient(farthest-side at 50% 100%, rgba(88,101,242,0.3), transparent);
+    background-repeat: no-repeat;
+    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+    background-attachment: local, local, scroll, scroll;
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Добавляем стили для анимации секций */
+.section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+    transform: translateX(0%);
+}
+
+.section.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.section.exit-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.section.exit-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+/* Улучшаем видимость во время анимации */
+.sections-container {
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+}
+
+/* Анимация скролла */
+@media (prefers-reduced-motion: no-preference) {
+    .modal-content .policy-text {
+        scroll-behavior: smooth;
+        scroll-snap-type: y proximity;
+        max-height: 70vh; /* Ограничение высоты */
+        padding-bottom: 60px; /* Отступ для футера модалки */
+    }
+}
+
+@keyframes modalClose {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes modalOpen {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 894px) {
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .modal-content .policy-text {
+        background-size: 100% 20px, 100% 20px, 100% 10px, 100% 10px;
+    }
+}
+
+@media (max-width: 894px) {
+    main {
+        padding-bottom: 20px;
+    }
+
+    footer {
+        padding: 20px 0;
+    }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 894px) {
+      .nav-link.active::after {
+        bottom: -12px;
+      }
+}   
+
+@media (max-width: 894px) {
+    .nav-content {
+        gap: 12px;
+    }
+
+    .nav-link {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    .invait-button {
+        padding: 8px 16px;
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .two-column,
+    .three-column {
+        grid-template-columns: 1fr;
+    }
+
+    .column {
+        margin-bottom: 20px;
+        padding: 1.5rem;
+    }
+
+    .discord-card {
+        padding: 1.5rem;
+    }
+
+    .feature li {
+        padding-left: 1.5rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 0.8rem;
+    }
+
+}
+
