@@ -55,6 +55,8 @@ main {
     width: 100%;
 }
 
+
+
 .container {
     max-width: 2480px;
     margin: 0 auto;
@@ -564,6 +566,47 @@ body.modal-open {
     position: relative;
     overflow: hidden;
     min-height: 500px;
+}
+
+/* Стили для футера и GitHub иконки */
+.footer-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.github-link {
+    position: absolute;
+    left: 0px;
+    bottom: -20px;
+    transition: all 0.3s ease;
+}
+
+.github-icon {
+    width: 30px; /* Настройте размер по своему усмотрению */
+    height: 30px;
+    filter: grayscale(100%) brightness(0.8);
+    transition: all 0.3s ease;
+}
+
+.github-link:hover .github-icon {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.5);
+}
+
+/* Для мобильных устройств */
+@media (max-width: 894px) {
+    .github-link {
+        left: 0;
+        bottom: -5px;
+        margin-top: 15px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
 }
 
 /* Анимация скролла */

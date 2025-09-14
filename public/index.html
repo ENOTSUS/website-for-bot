@@ -8,25 +8,26 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<nav>
-    <div class="container">
-        <div class="nav-content">
-            <a href="#home" class="nav-link active">🏠 Главная</a>
-            <a href="#features" class="nav-link">🚀 Функции</a>
-            <a href="#tos" class="nav-link">📜 Условия</a>
-            <a href="#privacy" class="nav-link">🔐 Конфиденциальность</a>
-            <a href="https://discord.com/oauth2/authorize?client_id=1006496401607372843"
-               class="invait-button"
-               target="_blank"
-               rel="noopener noreferrer">
-                ➕ Добавить бота
-            </a>
-            <div class="nav-indicator"></div> <!-- Индикатор активной ссылки -->
-    </div>
+<header>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="#home" class="nav-link active">🏠 Главная</a>
+                <a href="#features" class="nav-link">🚀 Функции</a>
+                <a href="#tos" class="nav-link">📜 Условия</a>
+                <a href="#privacy" class="nav-link">🔐 Конфиденциальность</a>
+                <a href="https://discord.com/oauth2/authorize?client_id=1006496401607372843"
+                   class="invait-button"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ➕ Добавить бота
+                </a>
+                <div class="nav-indicator"></div> <!-- Индикатор активной ссылки -->
         </div>
-    </div>
-</nav>
-
+            </div>
+        </div>
+    </nav>
+</header>
 <main class="container">
     <!-- Главная -->
     <section id="home" class="section active">
@@ -344,13 +345,20 @@
             </div>
         </div>
     </section>
-    <footer>
+</main>
+<footer>
     <div class="container">
-        <p>© 2025 Guardian Bot | Контакты: support@guardianbot.com</p>
-        <p>Не аффилирован с Discord Inc.</p>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>© 2025 Guardian Bot | Контакты: support@guardianbot.com</p>
+                <p>Не аффилирован с Discord Inc.</p>
+            </div>
+            <a href="https://github.com/ENOTSUS" class="github-link" target="_blank" rel="noopener noreferrer">
+                <img src="Group 10.png" alt="GitHub" class="github-icon">
+            </a>
+        </div>
     </div>
 </footer>
-</main>
         <div id="fullPolicyModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
