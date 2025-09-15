@@ -3,6 +3,7 @@ let isAnimating = false;
 document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('.nav-link:not(.invait-button)');
   const navIndicator = document.querySelector('.nav-indicator');
+  
   let isAnimating = false;
 
   // Функция для обновления позиции индикатора
@@ -62,7 +63,33 @@ document.addEventListener('DOMContentLoaded', function() {
             
             isAnimating = false;
         });
+        
     });
+
+// Обновление класса для навбара при наличии активной ссылки
+function updateNavContentClass() {
+  const navContent = document.querySelector('.nav-content');
+  const activeLink = document.querySelector('.nav-link.active');
+  
+  if (activeLink) {
+    navContent.classList.add('has-active');
+  } else {
+    navContent.classList.remove('has-active');
+  }
+}
+
+// Вызываем при загрузке и при изменении активной ссылки
+document.addEventListener('DOMContentLoaded', function() {
+  updateNavContentClass();
+  
+  // Обновляем при клике на ссылки
+  const navLinks = document.querySelectorAll('.nav-link:not(.invait-button)');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      setTimeout(updateNavContentClass, 50);
+    });
+  });
+});
   
   // Обновление индикатора при изменении размера окна
   window.addEventListener('resize', function() {
