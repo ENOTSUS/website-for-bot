@@ -422,8 +422,8 @@ footer {
 .close {
     color: #aaa;
     position: absolute;
-    right: 25px;
-    top: 15px;
+    right: 20px;
+    top: 10px;
     font-size: 35px;
     font-weight: bold;
 }
@@ -625,8 +625,8 @@ body.modal-open {
     .modal-content .policy-text {
         scroll-behavior: smooth;
         scroll-snap-type: y proximity;
-        max-height: 70vh; /* Ограничение высоты */
-        padding-bottom: 60px; /* Отступ для футера модалки */
+        max-height: 80vh; /* Ограничение высоты */
+        padding-bottom: 50px; /* Отступ для футера модалки */
     }
 }
 
@@ -858,7 +858,12 @@ body {
 }
 
 [data-theme="light"] .close {
-    color: #6b7280;
+    color: #6b7280 !important;
+    box-shadow: var(--card-shadow);
+    color: var(--discord-text);
+    right: 25px;
+    top: 15px;
+    
 }
 
 [data-theme="light"] .close:hover {
