@@ -216,3 +216,15 @@ document.addEventListener('DOMContentLoaded', function() {
         themeToggle.addEventListener('click', toggleTheme);
     }
 });
+
+// Функция для обновления позиции круга
+function updateCirclePosition(x, y) {
+    const circle = document.querySelector('.background-circle');
+    circle.style.left = x + 'px';
+    circle.style.top = y + 'px';
+}
+
+// Пример использования - позиционирование по клику
+// document.addEventListener('click', function(e) {
+//     updateCirclePosition(e.clientX - 525, e.clientY - 525); // Центрирование
+// }); 

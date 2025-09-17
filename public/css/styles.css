@@ -760,6 +760,10 @@ body {
     background: #dcdafd18;
     border-bottom: 1px solid var(--discord-border);
     backdrop-filter: blur(10px);
+}   
+
+[data-theme="light"] .data-table {
+    color: var(--discord-border) ; 
 }
 
 [data-theme="light"] .nav-link {
@@ -805,8 +809,16 @@ body {
     color: #111827;
 }
 
+[data-theme="light"] table {
+    background-color: var(--feature-bg) !important;
+}
+
+[data-theme="light"] p {
+    color: #111827 !important;
+}
+
 [data-theme="light"] .feature {
-    background: var(--feature-bg);
+    background: var(--feature-bg) ;
     border: 1px solid var(--discord-border);
 }
 
@@ -839,7 +851,7 @@ body {
 }
 
 [data-theme="light"] .modal-content {
-    background-color: #ffffff;
+    background-color: #dad8ff;
     border: 1px solid var(--discord-primary);
     box-shadow: var(--card-shadow);
     color: var(--discord-text);
@@ -879,10 +891,10 @@ body {
 
 [data-theme="light"] .modal-content .policy-text {
     background:
-            linear-gradient(#ffffff 30%, rgba(0,0,0,0)),
-            linear-gradient(rgba(0,0,0,0), #ffffff 70%) 0 100%,
-            radial-gradient(farthest-side at 50% 0, rgba(79,70,229,0.15), transparent),
-            radial-gradient(farthest-side at 50% 100%, rgba(79,70,229,0.15), transparent);
+            linear-gradient(#c4c1ff52, #f8fafc46),
+            linear-gradient(#b4b0ff0c, #f8fafc46 70%) 0 100%,
+            radial-gradient(farthest-side at 50% 0, #7972fa27, transparent),
+            radial-gradient(farthest-side at 50% 100%, #f8fafc46, transparent);
 }
 
 /* Кнопка переключения темы */
@@ -906,12 +918,42 @@ body {
     z-index: 1000;
 }
 
+/* Улучшенные переходы для плавности */
+.theme-transition,
+.theme-transition * {
+    transition: all 0.5s cubic-bezier(0.7, 0.3, 0.7, 1) !important;
+}
+
 .theme-toggle:hover {
-    transform: scale(1.1) rotate(12deg);
+    transform: scale(1.1) rotate(180deg);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="light"] .theme-toggle {
     background: var(--discord-primary);
     color: white;
+}
+
+.background-circle {
+    position: fixed;
+    border-radius: 50%;
+    z-index: -1; /* Чтобы круг был behind контента */
+    opacity: 0.1; /* Прозрачность для фонового эффекта */
+    filter: blur(30px); /* Размытие для мягкого эффекта */
+    transition: all 0.5s ease;
+    pointer-events: none; /* Чтобы не блокировал клики */
+}
+
+[data-theme="light"] .background-circle {
+    background: var(--discord-primary);
+    width: 5050px;
+    height: 1050px;
+    /* Позиционирование - измените по необходимости */
+    bottom: -500px;
+    right: -300px;
+}
+
+[data-theme="dark"] .background-circle {
+    /* Стили для темной темы если нужно */
+    display: none; /* Или другие стили */
 }
