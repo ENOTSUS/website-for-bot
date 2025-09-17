@@ -1,3 +1,4 @@
+
 let isAnimating = false;
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -180,4 +181,38 @@ document.querySelector('.invait-button').addEventListener('click', function(e) {
     // Стандартное поведение для внешней ссылки
 });
 
- 
+// Обновленная функция переключения темы
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    // Добавляем класс для плавного перехода
+    document.documentElement.classList.add('theme-transition');
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Обновляем иконку кнопки
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+    
+    // Убираем класс после завершения перехода
+    setTimeout(() => {
+        document.documentElement.classList.remove('theme-transition');
+    }, 500);
+}
+
+// Инициализация темы при загрузке
+document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    // Устанавливаем правильную иконку для кнопки
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+        
+        // Добавляем обработчик клика на кнопку
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+});
