@@ -420,7 +420,6 @@ footer {
 }
 
 .close {
-    color: #aaa;
     position: absolute;
     right: 20px;
     top: 10px;
@@ -894,12 +893,14 @@ body {
     background: rgba(229, 231, 235, 0.5);
 }
 
+
 [data-theme="light"] .modal-content .policy-text {
     background:
             linear-gradient(#c4c1ff52, #f8fafc46),
             linear-gradient(#b4b0ff0c, #f8fafc46 70%) 0 100%,
             radial-gradient(farthest-side at 50% 0, #7972fa27, transparent),
             radial-gradient(farthest-side at 50% 100%, #f8fafc46, transparent);
+            
 }
 
 /* Кнопка переключения темы */
