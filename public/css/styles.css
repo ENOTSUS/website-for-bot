@@ -6,14 +6,12 @@
     --discord-border: #1e1f22;
     --discord-gradient: linear-gradient(0deg, #5e6bed 0%, #5d44c5 125%);
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 body {
     background: linear-gradient(to top, rgba(2, 2, 2, 0.91) 0%, rgba(31, 32, 38, 0.03) 50%, transparent 100%),
     var(--discord-gradient);
@@ -23,46 +21,36 @@ body {
     min-height: 100vh;
     letter-spacing: 0.02em;
 }
-
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-
 body {
     scrollbar-width: thin; /* Firefox */
     scrollbar-color: var(--discord-primary) rgba(30, 31, 34, 0.4);
 }
-
 body::-webkit-scrollbar {
     width: 10px;
     background: transparent;
 }
-
 html {
     scrollbar-gutter: stable; /* Фиксирует место под скролл */
 }
-
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
-
 main {
     flex: 1 0 auto;
     width: 100%;
 }
-
-
-
 .container {
     max-width: 2480px;
     margin: 0 auto;
     padding: 0 20px;
 }
-
 nav {
     background: #1e1f22;
     padding: 16px 0;
@@ -71,9 +59,7 @@ nav {
     z-index: 100;
     border-bottom: 1px solid var(--discord-border);
     backdrop-filter: blur(10px);
-    
 }
-
 .nav-content {
     position: relative;
     display: flex;
@@ -82,7 +68,6 @@ nav {
     flex-wrap: wrap;
     overflow: visible;
 }
-
 .nav-content::before {
   content: '';
   position: absolute;
@@ -102,12 +87,10 @@ nav {
   z-index: 0;
   pointer-events: none;
 }
-
 .nav-link.active::before {
   background: linear-gradient(90deg, transparent, rgba(88, 101, 242, 0.3), transparent);
   animation: activeShimmer 4s infinite;
 }
-
 @keyframes activeShimmer {
   0%, 100% {
     left: -100%;
@@ -116,8 +99,6 @@ nav {
     left: 100%;
   }
 }
-
-
 .nav-link {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -135,9 +116,7 @@ nav {
     border-style:solid;
     border-color: #424bb6;
     border-width: 1.3px;
-    
 }
-
 .nav-link::before {
     content: '';
     position: absolute;
@@ -148,18 +127,14 @@ nav {
     background: linear-gradient(90deg, transparent, rgba(88, 101, 242, 0.2), transparent);
     transition: left 0.5s ease;
 }
-
 .nav-link:hover::before {
     left: 100%;
-    
 }
-
 .nav-link:hover {
     background: rgba(88, 101, 242, 0.15);
     color: var(--discord-primary);
     transform: translateY(-4px);
 }
-
 .nav-link.active {
     color: var(--discord-primary);
     transform: translateY(-4px);
@@ -169,7 +144,6 @@ nav {
     border-color: #2f3681;
     border-width: 1px;
 }
-
 .nav-link.active::after {
     content: '';
     position: absolute;
@@ -179,7 +153,6 @@ nav {
     height: 2px;
     background: var(--discord-primary);
 }
-
 .nav-indicator {
     position: absolute;
     bottom: 0px;
@@ -190,8 +163,6 @@ nav {
     border-radius: 2px;
     z-index: 1;
 }
-
-/* Анимация появления индикатора */
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -202,11 +173,9 @@ nav {
     transform: translateX(0);
   }
 }
-
 .nav-link.active {
   animation: slideIn 0.3s ease-out;
 }
-
 .invait-button {
     background: var(--discord-primary);
     color: white !important;
@@ -221,7 +190,6 @@ nav {
     margin-left: auto;
     border: 1px solid rgba(255,255,255,0.1);
 }
-
 .invait-button:hover {
     background: #4752c4;
     transform: translateY(-4px);
@@ -229,7 +197,6 @@ nav {
     -webkit-box-shadow: 0px 0px 22px 5px rgba(71,82,196,0.4);
     -moz-box-shadow: 0px 0px 22px 5px rgba(71,82,196,0.4);
 }
-
 .section {
     padding: 1px 0;
     min-height: calc(3vh - 5px);
@@ -240,14 +207,11 @@ nav {
     transform: translateY(20px);
     transition: all 0.4s ease;
 }
-
-
 .section.active {
     display: block;
     opacity: 1;
     transform: translateY(0);
 }
-
 .discord-card {
     background: rgba(30, 31, 34, 0.95);
     border-radius: 12px;
@@ -257,7 +221,6 @@ nav {
     box-shadow: 0 8px 32px rgb(109, 106, 220);
     backdrop-filter: blur(8px);
 }
-
 h1 {
     font-size: 2.5rem;
     margin-bottom: 2.5rem;
@@ -267,7 +230,6 @@ h1 {
     padding-bottom: 1.5rem;
     border-bottom: 3px solid rgba(88, 101, 242, 0.3);
 }
-
 h2 {
     font-size: 1.8rem;
     margin: 2rem 0 1rem;
@@ -275,14 +237,12 @@ h2 {
     font-weight: 600;
     line-height: 1.3;
 }
-
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
     margin: 32px 0;
 }
-
 .feature {
     background: linear-gradient(145deg, rgba(47, 48, 55, 0.9), rgba(30,31,34,0.9));
     padding: 24px;
@@ -291,18 +251,15 @@ h2 {
     transition: all 0.3s;
     backdrop-filter: blur(4px);
 }
-
 .feature:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 24px rgb(109, 106, 220);
 }
-
 .feature ul {
     padding-left: 1.2rem;
     margin: 1rem 0 0;
     list-style-type: none;
 }
-
 .feature li {
     margin-bottom: 1rem;
     line-height: 1.7;
@@ -310,7 +267,6 @@ h2 {
     position: relative;
     padding-left: 2rem;
 }
-
 .feature li:before {
     content: '•';
     position: absolute;
@@ -320,7 +276,6 @@ h2 {
     line-height: 1;
     top: 1px;
 }
-
 .data-table {
     width: 100%;
     border-collapse: collapse;
@@ -329,7 +284,6 @@ h2 {
     border-radius: 8px;
     overflow: hidden;
 }
-
 .data-table th,
 .data-table td {
     padding: 1rem 1.5rem;
@@ -338,17 +292,14 @@ h2 {
     vertical-align: top;
     font-size: 0.95em;
 }
-
 .data-table th {
     background: rgba(88, 101, 242, 0.1);
     font-weight: 600;
     letter-spacing: 0.5px;
 }
-
 .data-table tr:hover {
     background: rgba(255,255,255,0.03);
 }
-
 footer {
     background: rgba(30, 31, 34, 0.95);
     padding: 32px 0;
@@ -357,26 +308,40 @@ footer {
     text-align: center;
     backdrop-filter: blur(8px);
 }
-
 footer {
     flex-shrink: 0;
     margin-top: auto; /* Важная строка */
 }
-
 .two-column {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     margin: 25px 0;
 }
-
 .three-column {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     margin: 30px 0;
 }
-
+.four-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin: 30px 0;
+}
+.five-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 30px 0;
+}
+.six-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin: 30px 0;
+}
 .column {
     background: rgba(255,255,255,0.03);
     padding: 2rem;
@@ -385,7 +350,6 @@ footer {
     backdrop-filter: blur(4px);
     margin-bottom: 1.5rem;
 }
-
 .column h2,
 .column h3 {
     color: var(--discord-primary);
@@ -394,63 +358,55 @@ footer {
     padding-bottom: 0.8rem;
     border-bottom: 2px solid rgba(88, 101, 242, 0.2);
 }
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.8);
-}
-
-.modal-content {
-    background-color: #1e1f22;
-    margin: 5% auto;
-    padding: 30px;
-    border: 1px solid #5865f2;
-    box-shadow: 0 8px 24px rgb(109, 106, 220);
-    width: 80%;
-    max-width: 800px;
+.feature-column {
+    background: linear-gradient(145deg, rgba(47, 48, 55, 0.9), rgba(30,31,34,0.9));
+    padding: 24px;
     border-radius: 12px;
-    position: relative;
+    border: 1px solid var(--discord-border);
+    transition: all 0.3s;
+    backdrop-filter: blur(4px);
+    margin-bottom: 1.5rem;
 }
-
-.close {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 35px;
-    font-weight: bold;
+.feature-column h2 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    color: white;
+    font-weight: 600;
+    line-height: 1.3;
 }
-
-.close:hover {
-    color: #5865f2;
-    cursor: pointer;
+.feature-column ul {
+    padding-left: 1.2rem;
+    margin: 1rem 0 0;
+    list-style-type: none;
 }
-
-.policy-text {
-    color: #dbdee1;
+.feature-column li {
+    margin-bottom: 1rem;
     line-height: 1.7;
-    max-height: 80vh;
-    overflow-y: auto;
+    color: #b9bbbe;
+    position: relative;
+    padding-left: 2rem;
+}
+.feature-column li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--discord-primary);
+    font-size: 1.4em;
+    line-height: 1;
+    top: 1px;
+}
+.feature-column:hover {
     padding: 20px;
 }
-
 .policy-text h3 {
     color: #5865f2;
     margin: 25px 0 15px;
 }
-
 .full-policy-link {
     text-align: center;
     margin: 30px 0;
     padding: 15px;
 }
-
 .modal {
     display: none;
     position: fixed;
@@ -462,7 +418,6 @@ footer {
     background-color: rgba(0,0,0,0.8);
     z-index: 9999; /* Добавляем высокий z-index */
 }
-
 .modal-content {
     position: relative;
     background-color: #1e1f22;
@@ -473,17 +428,14 @@ footer {
     border-radius: 12px;
     animation: modalOpen 0.3s ease-out;
 }
-
 .modal.closing {
     animation: modalClose 0.3s ease-in;
 }
-
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
     background: rgba(30, 31, 34, 0.1);
 }
-
 ::-webkit-scrollbar-thumb {
     background: var(--discord-primary);
     border-radius: 8px;
@@ -491,68 +443,55 @@ footer {
     background-clip: padding-box;
     transition: all 0.3s;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: #4752c4;
     border: 1px solid rgba(255,255,255,0.15);
 }
-
 ::-webkit-scrollbar-track {
     background: rgba(30, 31, 34, 0.4);
     border-radius: 8px;
     margin: 4px 0;
 }
-
 /* Для Firefox */
 html {
     scrollbar-width: thin;
     scrollbar-color: var(--discord-primary) rgba(30, 31, 34, 0.4);
 }
-
 /* Плавная прокрутка */
 html {
     scroll-behavior: smooth;
 }
-
 /* Специальный стиль для модального окна */
 .modal-content .policy-text::-webkit-scrollbar {
     width: 8px;
 }
-
 .modal-content .policy-text::-webkit-scrollbar-thumb {
     background: rgba(88, 101, 242, 0.6);
     border-radius: 4px;
 }
-
 .modal-content .policy-text::-webkit-scrollbar-track {
     background: rgba(30, 31, 34, 0.2);
 }
-
-
 /* Специальные стили для секций */
 .scroll-section {
     scrollbar-width: thin;
     scrollbar-color: var(--discord-primary) transparent;
     overflow-y: auto;
-    max-height: 70vh;
+    max-height: 74vh;
     padding-right: 12px;
 }
-
 .scroll-section {
     flex: 1;
     overflow-y: auto;
     padding-bottom: 40px; /* Отступ от футера */
 }
-
 .scroll-section::-webkit-scrollbar {
     width: 6px;
 }
-
 /* Эффект при скролле */
 .feature:hover {
     scroll-snap-align: start;
 }
-
 /* Градиент для скролла в модалке */
 .modal-content .policy-text {
     background:
@@ -564,20 +503,17 @@ html {
     background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
     background-attachment: local, local, scroll, scroll;
 }
-
 .fixed-footer {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
 }
-
 body.modal-open {
     overflow: hidden;
     position: fixed;
     width: 100%;
 }
-
 /* Стили для футера и GitHub иконки */
 .footer-content {
     position: relative;
@@ -586,26 +522,22 @@ body.modal-open {
     align-items: center;
     flex-direction: column;
 }
-
 .github-link {
     position: absolute;
     left: 0px;
     bottom: -20px;
     transition: all 0.3s ease;
 }
-
 .github-icon {
     width: 30px; /* Настройте размер по своему усмотрению */
     height: 30px;
     filter: grayscale(100%) brightness(0.8);
     transition: all 0.3s ease;
 }
-
 .github-link:hover .github-icon {
     filter: grayscale(0%) brightness(1);
     transform: scale(1.5);
 }
-
 /* Для мобильных устройств */
 @media (max-width: 894px) {
     .github-link {
@@ -613,12 +545,10 @@ body.modal-open {
         bottom: -5px;
         margin-top: 15px;
     }
-    
     .footer-content {
         flex-direction: column;
     }
 }
-
 /* Анимация скролла */
 @media (prefers-reduced-motion: no-preference) {
     .modal-content .policy-text {
@@ -628,113 +558,91 @@ body.modal-open {
         padding-bottom: 50px; /* Отступ для футера модалки */
     }
 }
-
 @keyframes modalClose {
     from { opacity: 1; }
     to { opacity: 0; }
 }
-
 @keyframes modalOpen {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 @media (max-width: 894px) {
     ::-webkit-scrollbar {
         width: 4px;
     }
-
     .modal-content .policy-text {
         background-size: 100% 20px, 100% 20px, 100% 10px, 100% 10px;
     }
 }
-
 @media (max-width: 894px) {
     main {
         padding-bottom: 20px;
     }
-
     footer {
         padding: 20px 0;
     }
 }
-
 /* Для мобильных устройств */
 @media (max-width: 894px) {
       .nav-link.active::after {
         bottom: -12px;
       }
-}   
-
+}
 @media (max-width: 894px) {
     .nav-content {
         gap: 12px;
     }
-
     .nav-link {
         padding: 8px 12px;
         font-size: 0.9em;
     }
-
     .invait-button {
         padding: 8px 16px;
         width: 100%;
         justify-content: center;
         margin-left: 0;
     }
-
     h1 {
         font-size: 2rem;
         padding-bottom: 1rem;
     }
-
     h2 {
         font-size: 1.5rem;
     }
-
     .two-column,
     .three-column {
         grid-template-columns: 1fr;
     }
-
     .column {
         margin-bottom: 20px;
         padding: 1.5rem;
     }
-
     .discord-card {
         padding: 1.5rem;
     }
-
     .feature li {
         padding-left: 1.5rem;
     }
-
     .data-table th,
     .data-table td {
         padding: 0.8rem;
     }
-
 }
-
 html, body {
     overflow: auto;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE и Edge */
 }
-
-html::-webkit-scrollbar, 
+html::-webkit-scrollbar,
 body::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
 }
-
 /* Сохранение возможности скролла */
 body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
 }
-
 /* Переменные для светлой темы */
 :root[data-theme="light"] {
     --discord-primary: #4f46e5; /* Более насыщенный синий */
@@ -747,162 +655,128 @@ body {
     --card-shadow: 0 8px 32px rgba(79, 70, 229, 0.1);
     --hover-shadow: 0 8px 24px rgba(79, 70, 229, 0.15);
 }
-
 /* Стили для светлой темы */
 [data-theme="light"] body {
     background: linear-gradient(to top, rgb(249, 250, 251) 0%, rgba(255, 255, 255, 0.822) 50%, transparent 100%),
                 var(--discord-gradient);
     color: var(--discord-text);
 }
-
 [data-theme="light"] nav {
     background: #dcdafd18;
     border-bottom: 1px solid var(--discord-border);
     backdrop-filter: blur(10px);
-}   
-
-[data-theme="light"] .data-table {
-    color: var(--discord-border) ; 
 }
-
+[data-theme="light"] .data-table {
+    color: var(--discord-border) ;
+}
 [data-theme="light"] .nav-link {
     color: var(--discord-text);
     border-color: #4e46e57e;
 }
-
 [data-theme="light"] .nav-link:hover {
     background: rgba(79, 70, 229, 0.08);
     color: var(--discord-primary);
 }
-
 [data-theme="light"] .nav-link.active {
     color: var(--discord-primary);
     border-color: rgba(79, 70, 229, 0.3);
 }
-
 [data-theme="light"] .nav-link.active::after {
     background: var(--discord-primary);
 }
-
 [data-theme="light"] .invait-button {
     background: var(--discord-primary);
     color: white !important;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 [data-theme="light"] .invait-button:hover {
     background: #4338ca;
     box-shadow: 0px 0px 22px 5px rgba(79, 70, 229, 0.25);
 }
-
 [data-theme="light"] .discord-card {
     background: #dcdafd18;
     border: 1px solid var(--discord-border);
     box-shadow: var(--card-shadow);
     color: var(--discord-text);
 }
-
 [data-theme="light"] h1,
 [data-theme="light"] h2,
 [data-theme="light"] h3 {
     color: #111827;
 }
-
 [data-theme="light"] table {
     background-color: var(--feature-bg) !important;
 }
-
 [data-theme="light"] p {
     color: #111827 !important;
 }
-
 [data-theme="light"] .feature {
     background: var(--feature-bg) ;
     border: 1px solid var(--discord-border);
 }
-
 [data-theme="light"] .feature:hover {
     box-shadow: var(--hover-shadow);
 }
-
 [data-theme="light"] .feature li {
     color: #4b5563;
 }
-
 [data-theme="light"] .data-table {
     background: #f9fafb;
     color: var(--discord-text);
 }
-
 [data-theme="light"] .data-table th {
     background: rgba(79, 70, 229, 0.08);
     color: var(--discord-primary);
 }
-
 [data-theme="light"] .data-table tr:hover {
     background: rgba(79, 70, 229, 0.04);
 }
-
 [data-theme="light"] footer {
     background: rgba(255, 255, 255, 0);
     border-top: 1px solid var(--discord-border);
     color: var(--discord-text);
 }
-
 [data-theme="light"] .modal-content {
     background-color: #dad8ff;
     border: 1px solid var(--discord-primary);
-    box-shadow: var(--card-shadow);
+    box-shadow: #ffffff;
     color: var(--discord-text);
 }
-
 [data-theme="light"] .close {
     color: #6b7280 !important;
     box-shadow: var(--card-shadow);
     color: var(--discord-text);
     right: 25px;
     top: 15px;
-    
 }
-
 [data-theme="light"] .close:hover {
     color: var(--discord-primary);
 }
-
 [data-theme="light"] .policy-text {
     color: var(--discord-text);
 }
-
 [data-theme="light"] .policy-text h3 {
     color: var(--discord-primary);
 }
-
 [data-theme="light"] .full-policy-link a {
     color: var(--discord-primary) !important;
 }
-
 [data-theme="light"] ::-webkit-scrollbar-thumb {
     background: rgba(79, 70, 229, 0.5);
 }
-
 [data-theme="light"] ::-webkit-scrollbar-thumb:hover {
     background: var(--discord-primary);
 }
-
 [data-theme="light"] ::-webkit-scrollbar-track {
     background: rgba(229, 231, 235, 0.5);
 }
-
-
 [data-theme="light"] .modal-content .policy-text {
     background:
-            linear-gradient(#c4c1ff52, #f8fafc46),
-            linear-gradient(#b4b0ff0c, #f8fafc46 70%) 0 100%,
-            radial-gradient(farthest-side at 50% 0, #7972fa27, transparent),
-            radial-gradient(farthest-side at 50% 100%, #f8fafc46, transparent);
-            
+            linear-gradient(#00000000, #00000000),
+            linear-gradient(#00000000, #00000000),
+            radial-gradient(farthest-side at 50% 0, #b5b1ff44, transparent),
+            radial-gradient(farthest-side at 50% 100%, #b5b1ff44, transparent);
 }
-
 /* Кнопка переключения темы */
 .theme-toggle {
     position: fixed;
@@ -923,23 +797,19 @@ body {
     justify-content: center;
     z-index: 1000;
 }
-
 /* Улучшенные переходы для плавности */
 .theme-transition,
 .theme-transition * {
     transition: all 0.5s cubic-bezier(0.7, 0.3, 0.7, 1) !important;
 }
-
 .theme-toggle:hover {
     transform: scale(1.1) rotate(180deg);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
-
 [data-theme="light"] .theme-toggle {
     background: var(--discord-primary);
     color: white;
 }
-
 .background-circle {
     position: fixed;
     border-radius: 50%;
@@ -949,7 +819,6 @@ body {
     transition: all 0.5s ease;
     pointer-events: none; /* Чтобы не блокировал клики */
 }
-
 [data-theme="light"] .background-circle {
     background: var(--discord-primary);
     width: 5050px;
@@ -958,7 +827,6 @@ body {
     bottom: -500px;
     right: -300px;
 }
-
 [data-theme="dark"] .background-circle {
     /* Стили для темной темы если нужно */
     display: none; /* Или другие стили */
